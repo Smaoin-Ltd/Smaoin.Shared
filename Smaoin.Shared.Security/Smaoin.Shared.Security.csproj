@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Public NuGet metadata (GitHub URL, MIT licence, README). Active only when packed
+       with -p:PublicRelease=true; private-feed builds are unaffected. -->
+  <Import Project="../build/Public.props" Condition="'$(PublicRelease)' == 'true'" />
+
+  <PropertyGroup>
+    <Description>CSP middleware, per-request nonce generation, and security headers for ASP.NET Core.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+</Project>

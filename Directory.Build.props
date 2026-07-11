@@ -1,0 +1,38 @@
+<Project>
+
+  <!--
+    Build settings for the PUBLIC Smaoin.Shared repo on GitHub (a self-contained
+    mirror of the open-source packages). This file is copied to the public repo root
+    by build/export-public.ps1. It does NOT affect the internal monorepo.
+
+    Note: the packages published to nuget.org are produced by the internal pipeline
+    (build/Public.props with -p:PublicRelease=true), not from this repo. This just
+    makes the public repo build cleanly for anyone who clones it.
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+    <Authors>Smaoin Ltd</Authors>
+    <Company>Smaoin Ltd</Company>
+    <Copyright>Copyright © Smaoin Ltd</Copyright>
+    <PackageProjectUrl>https://github.com/Smaoin-Ltd/Smaoin.Shared</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Smaoin-Ltd/Smaoin.Shared</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+
+    <IsPackable>true</IsPackable>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup Condition="Exists('$(MSBuildThisFileDirectory)README.md')">
+    <None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+
+</Project>

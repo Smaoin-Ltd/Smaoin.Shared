@@ -1,0 +1,16 @@
+## .NET build output
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+artifacts/
+*.user
+
+## IDE
+.vs/
+.idea/
+*.suo
+
+## NuGet
+*.nupkg
+*.snupkg
