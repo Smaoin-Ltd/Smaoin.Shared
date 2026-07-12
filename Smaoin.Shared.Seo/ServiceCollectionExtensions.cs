@@ -13,6 +13,7 @@ public static class ServiceCollectionExtensions
             .ValidateDataAnnotations()
             .ValidateOnStart();
         services.AddSingleton<IJsonLdSerializer, JsonLdSerializer>();
+        services.AddSingleton<ISeoJsonLd, SeoJsonLd>();
         services.AddSingleton<ISitemapBuilder, SitemapBuilder>();
         return services;
     }
