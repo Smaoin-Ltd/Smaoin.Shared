@@ -10,4 +10,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Smaoin.Shared.Seo\Smaoin.Shared.Seo.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <!-- Byte-parity golden captured from the pre-move corporate SeoService; loaded at runtime. -->
+    <None Include="TestData\**\*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
 </Project>
